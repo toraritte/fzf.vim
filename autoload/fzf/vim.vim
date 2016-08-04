@@ -545,10 +545,10 @@ endfunction
 
 " ag command suffix, [options]
 function! fzf#vim#ag_raw(command_suffix, ...)
-  return s:fzf('ag', fzf#vim#wrap({
-  \ 'source':  'ag --nogroup --column --color '.a:command_suffix,
+  return s:fzf('ack', fzf#vim#wrap({
+  \ 'source':  'ack --nogroup --column --color '.a:command_suffix,
   \ 'sink*':    s:function('s:ag_handler'),
-  \ 'options': '--ansi --delimiter : --nth 4..,.. --prompt "Ag> " '.
+  \ 'options': '--ansi --delimiter : --nth 4..,.. --prompt "Ack> " '.
   \            '--multi --bind alt-a:select-all,alt-d:deselect-all '.
   \            '--color hl:68,hl+:110'}), a:000)
 endfunction
